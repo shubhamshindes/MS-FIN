@@ -11,7 +11,7 @@
         <relativePath/>
     </parent>
 
-    <groupId>com.app</groupId>
+    <groupId>com.fin</groupId>
     <artifactId>discovery-server</artifactId>
     <version>1.0.0</version>
     <name>discovery-server</name>
@@ -26,10 +26,7 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
+
     </dependencies>
 
     <dependencyManagement>

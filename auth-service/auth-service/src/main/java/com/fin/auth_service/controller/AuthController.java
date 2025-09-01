@@ -1,4 +1,6 @@
 package com.fin.auth_service.controller;
+
+import com.fin.auth_service.model.LoginRequest;
 import com.fin.auth_service.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -25,7 +27,9 @@ public class AuthController {
     public ResponseEntity<?> login(@RequestBody LoginRequest loginRequest) {
         try {
             Authentication authentication = authenticationManager.authenticate(
-                    new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword())
+                    new UsernamePasswordAuthenticationToken(
+                            loginRequest.getUsername(),
+                            loginRequest.getPassword())
             );
 
             UserDetails userDetails = (UserDetails) authentication.getPrincipal();
@@ -50,16 +54,5 @@ public class AuthController {
             }
         }
         return ResponseEntity.status(401).build();
-    }
-
-    public static class LoginRequest {
-        private String username;
-        private String password;
-
-        // Getters and setters
-        public String getUsername() { return username; }
-        public void setUsername(String username) { this.username = username; }
-        public String getPassword() { return password; }
-        public void setPassword(String password) { this.password = password; }
     }
 }
