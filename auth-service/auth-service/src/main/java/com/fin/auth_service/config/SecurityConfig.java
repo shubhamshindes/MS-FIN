@@ -25,12 +25,14 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/auth/**").permitAll()   // allow login, validate
-                        .anyRequest().authenticated()
-                );
+                        .requestMatchers("/api/auth/**").permitAll() // login, register APIs are open
+                        .anyRequest().authenticated()                // everything else secured
+                )
+                .authenticationProvider(authenticationProvider());
 
         return http.build();
     }
+
 
     // 🔑 AuthenticationManager bean (required for AuthController)
     @Bean

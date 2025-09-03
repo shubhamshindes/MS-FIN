@@ -14,7 +14,7 @@ public class KafkaListeners {
     @KafkaListener(topics = "customer-created", groupId = "notification-group")
     public void listenCustomerCreated(String message) {
         System.out.println("Received message: " + message);
-        sendEmail("admin@loanapp.com", "New Customer Created", message);
+        sendEmail("shindeshubham8055@gmail.com", "New Customer Created", message);
     }
 
     @KafkaListener(topics = "customer-deleted", groupId = "notification-group")
