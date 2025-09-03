@@ -13,7 +13,7 @@
         <module name="customer-service" />
         <module name="notification-service" />
       </profile>
-      <profile name="Annotation profile for disbursement-service" enabled="true">
+      <profile name="Annotation profile for repayment-service" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
